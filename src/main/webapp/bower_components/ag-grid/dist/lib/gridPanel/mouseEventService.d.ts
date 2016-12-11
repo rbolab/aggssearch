@@ -1,0 +1,20 @@
+// Type definitions for ag-grid v7.0.0
+// Project: http://www.ag-grid.com/
+// Definitions by: Niall Crosby <https://github.com/ceolter/>
+import { GridCell } from "../entities/gridCell";
+export declare class MouseEventService {
+    private gridPanel;
+    private columnController;
+    private rowModel;
+    private floatingRowModel;
+    private gridOptionsWrapper;
+    getCellForMouseEvent(mouseEvent: MouseEvent): GridCell;
+    private getFloating(mouseEvent);
+    private getFloatingRowIndex(mouseEvent, floating);
+    private getRowIndex(mouseEvent, floating);
+    private getBodyRowIndex(mouseEvent);
+    private getContainer(mouseEvent);
+    private getColumn(mouseEvent);
+    private getColumnsForContainer(container);
+    private getXForContainer(container, mouseEvent);
+}

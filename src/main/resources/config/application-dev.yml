@@ -58,6 +58,9 @@ liquibase:
 
 server:
     port: 8080
+    compression:
+      enabled: false
+      mime-types: application/json,application/xml,text/html,text/xml,text/plain,text/css,application/javascript
 
 # ===================================================================
 # JHipster specific properties

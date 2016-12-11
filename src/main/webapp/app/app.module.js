@@ -3,7 +3,7 @@
 
     angular
         .module('funduniversApp', [
-            'ngStorage', 
+            'ngStorage',
             'ngResource',
             'ngCookies',
             'ngAria',
@@ -13,6 +13,7 @@
             'ui.bootstrap.datetimepicker',
             'ui.router',
             'infinite-scroll',
+            /*'agGrid',*/
             // jhipster-needle-angularjs-add-module JHipster will add new module here
             'angular-loading-bar'
         ])

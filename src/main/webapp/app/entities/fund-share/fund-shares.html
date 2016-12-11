@@ -1,0 +1,153 @@
+<div>
+    <h2>Fund Shares</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="fund-share.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs" >
+                        Create new Fund Share
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="Query">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-2 no-padding-left">
+            Number of hits : {{vm.total}}
+            </div>
+            <div class="col-xs-2 no-padding-left">
+            Currency :
+            <ul>
+                <li ng-repeat="bucket in vm.currency_buckets">
+                    {{bucket.key}} : {{bucket.doc_count}}
+                </li>
+            </ul>
+            </div>
+            <div class="col-xs-2 no-padding-left">
+                Invetor Type :
+                <ul>
+                    <li ng-repeat="bucket in vm.investorType_buckets">
+                        {{bucket.key}} : {{bucket.doc_count}}
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+    <br/>
+    <div ag-grid="gridOptions" class="ag-fresh" style="height: 100%;"></div>
+    <br/>
+    <!--div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Name</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fundShare in vm.fundShares track by fundShare._id">
+                    <td><a ui-sref="fund-share-detail({id:fundShare._source.computableId})">{{fundShare._source.computableId}}</a></td>
+                    <td>{{fundShare._source.baseName}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="fund-share-detail({id:fundShare.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fund-share.edit({id:fundShare.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fund-share.delete({id:fundShare.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div-->
+
+
+    <section class="section">
+
+        <div class="custom-table">
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>ISIN code</th>
+                    <th>Investor Type</th>
+                    <th>Features</th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody ng-repeat-start="fundShare in vm.fundShares track by fundShare._id" class="header">
+                <tr>
+                    <td class="align-center arrow" ng-click="isTableOpen($event)"></td>
+                    <td ng-click="isTableOpen($event)">{{fundShare._source.baseName}}</td>
+                    <td ng-click="isTableOpen($event)">JE00B63QS028</td>
+                    <td ng-click="isTableOpen($event)">-</td>
+                    <td ng-click="isTableOpen($event)"></td>
+                    <td class="align-center">
+                        <label class="mdl-checkbox mdl-checkbox-alone mdl-js-checkbox" for="checkbox-table-1">
+                            <input type="checkbox" id="checkbox-table-1" class="mdl-checkbox__input" ng-click="isAllColumnCheckboxSelected($event)">
+                        </label>
+                    </td>
+                </tr>
+                </tbody>
+
+                <tbody ng-repeat-end  class="content">
+                    <tr ng-repeat="share in fundShare._source.shares">
+                        <td></td>
+                        <td>{{share.name}}</td>
+                        <td>{{share.isin}}</td>
+                        <td>{{share.investorType}}</td>
+                        <td class="align-center">
+                            <span class="ucits">Ucits</span>
+                            <span class="lyx">Lyx</span>
+                        </td>
+                        <td class="align-center">
+                            <label class="mdl-checkbox mdl-checkbox-alone mdl-js-checkbox" for="checkbox-table-1-1">
+                                <input type="checkbox" id="checkbox-table-1-1" class="mdl-checkbox__input">
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+                <div/>
+            </table>
+        </div>
+
+    </section>
+</div>
