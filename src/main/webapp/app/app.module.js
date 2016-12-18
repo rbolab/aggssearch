@@ -19,9 +19,10 @@
         ])
         .run(run);
 
-    run.$inject = ['stateHandler'];
+    run.$inject = ['stateHandler', '$rootScope'];
 
-    function run(stateHandler) {
+    function run(stateHandler, $rootScope) {
         stateHandler.initialize();
+        $rootScope._ = window._;
     }
 })();

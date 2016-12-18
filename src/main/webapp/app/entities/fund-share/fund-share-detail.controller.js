@@ -5,17 +5,15 @@
         .module('funduniversApp')
         .controller('FundShareDetailController', FundShareDetailController);
 
-    FundShareDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'FundShare'];
+    FundShareDetailController.$inject = ['$http', '$scope', '$rootScope', '$stateParams', 'previousState', 'navtrack', 'FundShare', 'NavTrack'];
 
-    function FundShareDetailController($scope, $rootScope, $stateParams, previousState, entity, FundShare) {
+    function FundShareDetailController($http, $scope, $rootScope, $stateParams, previousState, navtrack, FundShare, NavTrack) {
         var vm = this;
 
-        vm.fundShare = entity;
+        vm.fundShare;
+        vm.navtrack = navtrack;
         vm.previousState = previousState.name;
 
-        var unsubscribe = $rootScope.$on('funduniversApp:fundShareUpdate', function(event, result) {
-            vm.fundShare = result;
-        });
-        $scope.$on('$destroy', unsubscribe);
+
     }
 })();

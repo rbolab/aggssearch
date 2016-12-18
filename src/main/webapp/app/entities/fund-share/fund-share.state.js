@@ -41,8 +41,8 @@
                 }
             },
             resolve: {
-                entity: ['$stateParams', 'FundShare', function($stateParams, FundShare) {
-                    return FundShare.get({id : $stateParams.id}).$promise;
+                navtrack: ['$stateParams', 'NavTrack', function($stateParams, NavTrack) {
+                    return NavTrack.get({id : $stateParams.id}).$promise;
                 }],
                 previousState: ["$state", function ($state) {
                     var currentStateData = {
