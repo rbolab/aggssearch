@@ -44,6 +44,9 @@
       "main": [
         "dist/css/bootstrap.css"
       ]
+    },
+    "highcharts": {
+      "main": "highstock.js"
     }
   },
   "resolutions": {

@@ -24,7 +24,7 @@
             <header class="header">
                 <button ng-click="isAsideMenuOpen = !isAsideMenuOpen" type="button" class="button mdl-js-button mdl-js-ripple-effect"><span class="icon-arrow-right"></span></button>
 
-                <h3>Portfolio</h3>
+                <h3>Fund detail</h3>
 
                 <div class="action">
                     <ul class="inline middle">
@@ -55,8 +55,8 @@
             <div class="content">
                 <nav class="action">
                     <ul>
-                        <li><a href="#!" class="button mdl-js-button mdl-js-ripple-effect active"><span class="puce">Cockpit</span></a></li>
-                        <li><a href="#!" class="button mdl-js-button mdl-js-ripple-effect"><span class="puce">Holdings</span></a></li>
+                        <li><a ui-sref="fund-share-detail.overview" ui-sref-active="active" class="button mdl-js-button mdl-js-ripple-effect"><span class="puce">Overview</span></a></li>
+                        <li><a ui-sref="fund-share-detail.holdings" ui-sref-active="active" class="button mdl-js-button mdl-js-ripple-effect"><span class="puce">Holdings</span></a></li>
                         <li><a href="#!" class="button mdl-js-button mdl-js-ripple-effect"><span class="puce">Performance &amp; Risk</span></a></li>
                         <li><a href="#!" class="button mdl-js-button mdl-js-ripple-effect"><span class="puce">Exposure &amp; Stress Tests</span></a></li>
                         <li><a href="#!" class="button mdl-js-button mdl-js-ripple-effect"><span class="puce">Correlation matrix</span></a></li>
@@ -64,156 +64,20 @@
                 </nav>
             </div>
 
-            <nav class="aside-menu" ng-class="{'open': isAsideMenuOpen}">
-                <button ng-click="isAsideMenuOpen = !isAsideMenuOpen" type="button" class="button mdl-js-button mdl-js-ripple-effect"><span class="icon-arrow-left"></span></button>
 
-                <ul>
-                    <li>
-                        <h5>My Investments</h5>
-                        <ul>
-                            <li><a href="#!">Lyxor focus fund LTD - Class A (eur)</a></li>
-                            <li><a href="#!">US JPN Macro portfolio</a></li>
-                            <li><a href="#!">World Equities Porfolio</a></li>
-                            <li><a href="#!">Emerging Opportunities</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h5>My Portfolio</h5>
-                        <ul>
-                            <li><a href="#!">My custom pdf</a></li>
-                            <li><a href="#!">Credit &amp; Fl portfolios</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
         </aside>
 
         <div class="content">
-            <div class="styles">
-                <div class="triangle triangle-1">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 10 10" xml:space="preserve" preserveAspectRatio="xMinYMin meet">
-								<polygon points="0,0 10,0 0,10" fill="transparent" />
-							</svg>
-                </div>
 
-                <div class="triangle triangle-2">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 10 10" xml:space="preserve" preserveAspectRatio="none">
-								<polygon points="0,0 10,0 10,10" fill="transparent" />
-							</svg>
-                </div>
-            </div>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Geographical breakdown</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-geographical-breakdown"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Top 5 position</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-top-five-position"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Cumulative performance</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-cumulative-performance"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Nav historical chart</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-historical-chart"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Performance vs. 10 Best Index Months</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-performance-vs-ten-best-index-months"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Risk adjusted performance</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-risk-adjusted-performance"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Fixed income</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-fixed-income"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Drawdown &amp; run up history</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-drawdown-and-run-up-history"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Exposure history</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-exposure-history"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Perf &amp; volatility</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-perf-and-volatility"></div>
-            </section>
-
-            <section class="section">
-                <div class="title">
-                    <h3>Monthly performance</h3>
-                </div>
-
-                <div class="highcharts" id="hightcharts-monthly-performance"></div>
-            </section>
+            <div ui-view="" ng-cloak></div>
         </div>
     </section>
 </main>
 <div>
-    <h2><span>Fund Share</span></h2>
-    <hr>
-    <jhi-alert-error></jhi-alert-error>
-    <dl class="dl-horizontal jh-entity-details">
-        <dt><span>Name</span></dt>
-        <dd>
-            <span>Detail screen</span>
-        </dd>
-    </dl>
-
-    <nav-track data="vm.navtrack.seriesIndicatorSet.values[0].point"/>
-
     <button type="submit"
             ui-sref="{{ vm.previousState }}"
             class="btn btn-info">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
     </button>
 
-    <button type="button" ui-sref="fund-share-detail.edit({id:vm.fundShare.id})" class="btn btn-primary">
-        <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-xs hidden-sm"> Edit</span>
-    </button>
 </div>

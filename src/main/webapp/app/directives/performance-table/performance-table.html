@@ -1,0 +1,18 @@
+<section class="section">
+    <div class="title">
+        <h3>Performance Table</h3>
+    </div>
+
+    <table>
+        <thead>
+        <th>Date</th>
+        <th>---</th>
+        <th>Value</th>
+        </thead>
+        <tr ng-repeat="row in data">
+            <td>{{row.date | date : 'yyyy-MM-dd'}}</td>
+            <td> </td>
+            <td>{{row.value}}</td>
+        </tr>
+    </table>
+</section>

@@ -29,6 +29,7 @@
         .state('fund-share-detail', {
             parent: 'entity',
             url: '/fund-share/{id}',
+            //abstract: true,
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'FundShare'
@@ -40,6 +41,7 @@
                     controllerAs: 'vm'
                 }
             },
+            redirectTo: 'fund-share-detail.overview',
             resolve: {
                 navtrack: ['$stateParams', 'NavTrack', function($stateParams, NavTrack) {
                     return NavTrack.get({id : $stateParams.id}).$promise;
@@ -51,6 +53,24 @@
                         url: $state.href($state.current.name, $state.params)
                     };
                     return currentStateData;
+                }]
+            }
+        })
+        .state('fund-share-detail.overview', {
+            url: '/overview',
+            templateUrl: 'app/entities/fund-share/fund-share-detail-overview.html',
+            resolve: {
+                navtrack: ['$stateParams', 'NavTrack', function($stateParams, NavTrack) {
+                    return NavTrack.get({id : $stateParams.id}).$promise;
+                }]
+            }
+        })
+        .state('fund-share-detail.holdings', {
+            url: '/holdings',
+            templateUrl: 'app/entities/fund-share/fund-share-detail-holdings.html',
+            resolve: {
+                navtrack: ['$stateParams', 'NavTrack', function($stateParams, NavTrack) {
+                    return NavTrack.get({id : $stateParams.id}).$promise;
                 }]
             }
         })

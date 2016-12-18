@@ -19,10 +19,17 @@
         ])
         .run(run);
 
-    run.$inject = ['stateHandler', '$rootScope'];
+    run.$inject = ['stateHandler', '$rootScope', '$state'];
 
-    function run(stateHandler, $rootScope) {
+    function run(stateHandler, $rootScope, $state) {
         stateHandler.initialize();
         $rootScope._ = window._;
+
+        $rootScope.$on('$stateChangeStart', function(evt, to, params) {
+            if (to.redirectTo) {
+                evt.preventDefault();
+                $state.go(to.redirectTo, params, {location: 'replace'})
+            }
+        });
     }
 })();
