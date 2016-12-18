@@ -1,5 +1,3 @@
-# fundunivers
-
 This application was generated using JHipster 3.10.0, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v3.10.0](https://jhipster.github.io/documentation-archive/v3.10.0).
 
 ## Development
